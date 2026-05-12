@@ -1,0 +1,66 @@
+@model ClinicManagementSystem.Models.MedicalRecord
+
+<h2>Add Medical Record</h2>
+
+<form asp-action="Create">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Patient
+        </label>
+
+        <select asp-for="PatientId"
+                asp-items="ViewBag.Patients"
+                class="form-control">
+
+            <option value="">
+                -- Select Patient --
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Diagnosis
+        </label>
+
+        <input asp-for="Diagnosis"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Treatment
+        </label>
+
+        <input asp-for="Treatment"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Record Date
+        </label>
+
+        <input asp-for="RecordDate"
+               type="date"
+               class="form-control" />
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+
+        Save
+
+    </button>
+
+</form>

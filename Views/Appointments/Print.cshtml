@@ -1,0 +1,35 @@
+@model IEnumerable<ClinicManagementSystem.Models.Appointment>
+
+<h2>Appointments Report</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td>@item.Patient!.FullName</td>
+
+        <td>@item.Doctor!.FullName</td>
+
+        <td>@item.AppointmentDate.ToString("MMMM dd, yyyy")</td>
+
+        <td>@item.AppointmentTime</td>
+
+    </tr>
+}
+
+    </tbody>
+
+</table>

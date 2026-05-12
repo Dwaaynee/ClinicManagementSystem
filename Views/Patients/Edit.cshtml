@@ -1,0 +1,44 @@
+@model ClinicManagementSystem.Models.Patient
+
+<h2>Edit Patient</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+
+        <label asp-for="FullName"></label>
+
+        <input asp-for="FullName"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="Gender"></label>
+
+        <input asp-for="Gender"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="DateOfBirth"></label>
+
+        <input asp-for="DateOfBirth"
+               type="date"
+               class="form-control" />
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+
+        Save
+
+    </button>
+
+</form>

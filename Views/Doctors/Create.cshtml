@@ -1,0 +1,47 @@
+@model ClinicManagementSystem.Models.Doctor
+
+<h2>Add Doctor</h2>
+
+<form asp-action="Create">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Full Name
+        </label>
+
+        <input asp-for="FullName"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Specialty
+        </label>
+
+        <input asp-for="Specialty"
+               class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Contact Number
+        </label>
+
+        <input asp-for="ContactNumber"
+               class="form-control" />
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+
+        Save
+
+    </button>
+
+</form>

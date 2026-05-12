@@ -1,0 +1,104 @@
+@model IEnumerable<ClinicManagementSystem.Models.MedicalRecord>
+
+<h2 class="mb-4 text-danger fw-bold">
+    Medical Records
+</h2>
+
+<div class="mb-3">
+
+    <a asp-action="Create"
+       class="btn btn-danger shadow-sm me-2">
+
+        Add Record
+
+    </a>
+
+    <a asp-action="Print"
+       class="btn btn-dark shadow-sm">
+
+        Print PDF
+
+    </a>
+
+</div>
+
+<div class="card shadow-lg border-0 rounded-4">
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead class="table-danger">
+
+                <tr>
+                    <th>Patient</th>
+                    <th>Gender</th>
+                    <th>BirthDate</th>
+                    <th>Diagnosis</th>
+                    <th>Treatment</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td class="fw-semibold">
+            @item.Patient!.FullName
+        </td>
+
+        <td>
+            @item.Patient.Gender
+        </td>
+
+        <td>
+            @item.Patient.DateOfBirth.ToString("MMMM dd, yyyy")
+        </td>
+
+        <td>
+            @item.Diagnosis
+        </td>
+
+        <td>
+            @item.Treatment
+        </td>
+
+        <td>
+            @item.RecordDate.ToString("MMMM dd, yyyy")
+        </td>
+
+        <td>
+
+            <a asp-action="Edit"
+               asp-route-id="@item.Id"
+               class="btn btn-warning btn-sm me-2">
+
+                Edit
+
+            </a>
+
+            <a asp-action="Delete"
+               asp-route-id="@item.Id"
+               class="btn btn-danger btn-sm">
+
+                Delete
+
+            </a>
+
+        </td>
+
+    </tr>
+}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

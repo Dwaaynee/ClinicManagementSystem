@@ -1,0 +1,99 @@
+@model IEnumerable<ClinicManagementSystem.Models.Appointment>
+
+<h2 class="mb-4 text-warning fw-bold">
+    Appointments
+</h2>
+
+<div class="mb-3">
+
+    <a asp-action="Create"
+       class="btn btn-warning shadow-sm me-2">
+
+        Add Appointment
+
+    </a>
+
+    <a asp-action="Print"
+       class="btn btn-danger shadow-sm">
+
+        Print PDF
+
+    </a>
+
+</div>
+
+<div class="card shadow-lg border-0 rounded-4">
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead class="table-warning">
+
+                <tr>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Special Note</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td class="fw-semibold">
+            @item.Patient!.FullName
+        </td>
+
+        <td>
+            @item.Doctor!.FullName
+        </td>
+
+        <td>
+            @item.AppointmentDate.ToString("MMMM dd, yyyy")
+        </td>
+
+        <td>
+            @item.AppointmentTime
+        </td>
+
+        <td>
+            @item.SpecialNote
+        </td>
+
+        <td>
+
+            <a asp-action="Edit"
+               asp-route-id="@item.Id"
+               class="btn btn-warning btn-sm me-2">
+
+                Edit
+
+            </a>
+
+            <a asp-action="Delete"
+               asp-route-id="@item.Id"
+               class="btn btn-danger btn-sm">
+
+                Delete
+
+            </a>
+
+        </td>
+
+    </tr>
+}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Clinic Management System";
+}
+
+<div class="container">
+
+    <div class="text-center mt-5">
+
+        <h1 class="display-4 fw-bold text-primary">
+            Clinic Management System
+        </h1>
+
+        <p class="lead mt-3">
+            Manage Patients, Doctors, Appointments, and Medical Records.
+        </p>
+
+    </div>
+
+    <div class="row mt-5 g-5 justify-content-center">
+
+        <!-- Patients -->
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg h-100 border-0 rounded-4">
+
+                <div class="card-body text-center d-flex flex-column p-5">
+
+                    <h2 class="fw-bold mb-4">
+                        Patients
+                    </h2>
+
+                    <p class="flex-grow-1">
+                        Manage patient information and records.
+                    </p>
+
+                    <a asp-controller="Patients"
+                       asp-action="Index"
+                       class="btn btn-primary btn-lg mt-3">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Doctors -->
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg h-100 border-0 rounded-4">
+
+                <div class="card-body text-center d-flex flex-column p-5">
+
+                    <h2 class="fw-bold mb-4">
+                        Doctors
+                    </h2>
+
+                    <p class="flex-grow-1">
+                        Manage doctors and specialties.
+                    </p>
+
+                    <a asp-controller="Doctors"
+                       asp-action="Index"
+                       class="btn btn-success btn-lg mt-3">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Appointments -->
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg h-100 border-0 rounded-4">
+
+                <div class="card-body text-center d-flex flex-column p-5">
+
+                    <h2 class="fw-bold mb-4">
+                        Appointments
+                    </h2>
+
+                    <p class="flex-grow-1">
+                        Schedule and monitor appointments.
+                    </p>
+
+                    <a asp-controller="Appointments"
+                       asp-action="Index"
+                       class="btn btn-warning btn-lg mt-3">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Medical Records -->
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg h-100 border-0 rounded-4">
+
+                <div class="card-body text-center d-flex flex-column p-5">
+
+                    <h2 class="fw-bold mb-4">
+                        Medical Records
+                    </h2>
+
+                    <p class="flex-grow-1">
+                        Access medical history and treatments.
+                    </p>
+
+                    <a asp-controller="MedicalRecords"
+                       asp-action="Index"
+                       class="btn btn-danger btn-lg mt-3">
+                        Open
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

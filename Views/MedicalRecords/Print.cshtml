@@ -1,0 +1,35 @@
+@model IEnumerable<ClinicManagementSystem.Models.MedicalRecord>
+
+<h2>Medical Records Report</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Diagnosis</th>
+            <th>Treatment</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td>@item.Patient!.FullName</td>
+
+        <td>@item.Diagnosis</td>
+
+        <td>@item.Treatment</td>
+
+        <td>@item.RecordDate.ToString("MMMM dd, yyyy")</td>
+
+    </tr>
+}
+
+    </tbody>
+
+</table>
